@@ -106,8 +106,6 @@ namespace Snake
                     {
                         apples[i].ImEating = true;
 
-                       
-
                         //0,1,2
                         //Count = 1, index of first element is 0
                         //Count = 2, index of first element is 0, index of second element is 1
@@ -116,34 +114,31 @@ namespace Snake
                         tailSegment.x = tail[tail.Count - 1].x;
                         tailSegment.y = tail[tail.Count - 1].y;
                         tail.Add(tailSegment);
-
-                        
                     }
-                    
-
                 }
 
-                /*if (tail[0].x < 0)
-                {
-                    tail[0].x = widht;
-                }
 
-                if (tail[0].x > widht)
-                {
-                    tail[0].x = 0;
-                }
+                    /*if (tail[0].x < 0)
+                    {
+                        tail[0].x = widht;
+                    }
 
-                if (tail[0].y < 0)
-                {
-                    tail[0].y = height;
-                }
+                    if (tail[0].x > widht)
+                    {
+                        tail[0].x = 0;
+                    }
 
-                if (tail[0].y > height)
-                {
-                    tail[0].y = 0;
-                }*/
+                    if (tail[0].y < 0)
+                    {
+                        tail[0].y = height;
+                    }
 
-                if (tail[0].x < 0 || tail[0].x > widht || tail[0].y < 0 || tail[0].y > height)
+                    if (tail[0].y > height)
+                    {
+                        tail[0].y = 0;
+                    }*/
+
+                    if (tail[0].x < 0 || tail[0].x > widht || tail[0].y < 0 || tail[0].y > height)
                 {
                     Console.CursorLeft = 20;
                     Console.CursorTop = 20;
@@ -180,7 +175,19 @@ namespace Snake
                    
                 }
 
-                    Thread.Sleep(100);
+                for (int i = 2; i < tail.Count; i++) //check from second tail position
+                {
+                    if ((tail[0].x == tail[i].x) && (tail[0].y == tail[i].y))
+                    {
+                        Console.CursorLeft = 20;
+                        Console.CursorTop = 20;
+                        Console.Write("Game Over");
+                        return;
+                    }
+                }
+
+
+                Thread.Sleep(100);
                     //Console.Write(key.KeyChar.ToString().ToUpper());                
                 }
             

@@ -21,7 +21,7 @@ namespace Snake
     {
         static int widht = 80;
         static int height = 40;
-        static int appleSize = 50;
+        static int appleSize =1;
         static int eatedApplesCount = 0;
         //{} () [] <>
         //we use List of objects of class AppleCoord
@@ -30,14 +30,16 @@ namespace Snake
         static List<TailSegmentCoord> tail = new List<TailSegmentCoord>();
         private static void Main(string[] args)
         {
+
             Random r = new Random();
-            for(int i=0; i < appleSize; i++ )
+
+            for (int i = 0; i < appleSize; i++)
             {
                 AppleCoord a = new AppleCoord();
                 a.x = r.Next(widht);
                 a.y = r.Next(height);
                 apples.Add(a);
-
+            
                 Console.CursorLeft = a.x;
                 Console.CursorTop = a.y;
                 Console.Write("0");
@@ -47,8 +49,8 @@ namespace Snake
             head.x = 10;
             head.y = 10;
             tail.Add(head);
-
             ConsoleKeyInfo key = new ConsoleKeyInfo();
+
             while (true)
             {
                 if (Console.KeyAvailable)
@@ -73,9 +75,9 @@ namespace Snake
                     tail[i].x = storePrevSegment.x;
                     tail[i].y = storePrevSegment.y;
                     storePrevSegment = storeCurrentSegment;
+
                 }
-
-
+                 
                 //we check where snake go
                 if (key.Key == ConsoleKey.UpArrow)
                 {
@@ -97,13 +99,15 @@ namespace Snake
                     tail[0].x++;
                 }
                 //at this stage our snake is make new step
-                
+
                 for (int i = 0; i < appleSize; i++)
                 {
                     if ((apples[i].x == tail[0].x) && (apples[i].y == tail[0].y))
                     {
                         apples[i].ImEating = true;
-                        eatedApplesCount++;
+
+                       
+
                         //0,1,2
                         //Count = 1, index of first element is 0
                         //Count = 2, index of first element is 0, index of second element is 1
@@ -112,10 +116,14 @@ namespace Snake
                         tailSegment.x = tail[tail.Count - 1].x;
                         tailSegment.y = tail[tail.Count - 1].y;
                         tail.Add(tailSegment);
+
+                        
                     }
+                    
+
                 }
 
-                if (tail[0].x < 0)
+                /*if (tail[0].x < 0)
                 {
                     tail[0].x = widht;
                 }
@@ -133,6 +141,14 @@ namespace Snake
                 if (tail[0].y > height)
                 {
                     tail[0].y = 0;
+                }*/
+
+                if (tail[0].x < 0 || tail[0].x > widht || tail[0].y < 0 || tail[0].y > height)
+                {
+                    Console.CursorLeft = 20;
+                    Console.CursorTop = 20;
+                    Console.Write("Game Over");
+                    break;
                 }
 
                 for (int i = 0; i < tail.Count; i++)
@@ -149,21 +165,26 @@ namespace Snake
                         Console.CursorTop = tail[i].y;
                         Console.Write("0");
                     }
+
+
+                    Console.CursorLeft = 1;
+                    Console.CursorTop = 40;
+                    Console.Write(eatedApplesCount);
+
+
+                    //if (eatedApplesCount == appleSize)
+                    // {
+                    // Console.Write("Game Over");
+                    // break; //while (true) is break now 
+                    //}
+                   
                 }
 
-                Console.CursorLeft = 0;
-                Console.CursorTop = 41;
-                Console.Write(eatedApplesCount);
-
-                if (eatedApplesCount == appleSize)
-                {
-                    Console.Write("Game Over");
-                    break; //while (true) is break now 
+                    Thread.Sleep(100);
+                    //Console.Write(key.KeyChar.ToString().ToUpper());                
                 }
-                Thread.Sleep(100);
-                //Console.Write(key.KeyChar.ToString().ToUpper());                
-            }
-
+            
+            
             Console.ReadLine();
         }
     }

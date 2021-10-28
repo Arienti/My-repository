@@ -11,20 +11,29 @@ namespace FirstWPF
         {
             InitializeComponent();
         }
-
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            myText.Text = myText.Text.ToUpper();
+        }
+        /// <summary>
+        /// the home task - is check valid email address inputs "name@domain"
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Title = "Button pressed";
-        }
+            int count = 0;
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-            Close();
-        }
+            for(int i=0; i < myText.Text.Length; i++)
+            {
+                if (myText.Text[i] == 'a')
+                {
+                    count++;
+                }
+            }
 
-        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e) //event handler 
-        {
-            e.Cancel = true;
+            aCountingResult.Text = count.ToString();
+            //aCountingResult.Text = "valid";
         }
     }
 }

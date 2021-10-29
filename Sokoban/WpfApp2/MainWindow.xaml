@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp2"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800" PreviewKeyDown="Window_PreviewKeyDown">
-    <Grid>
+        Title="MainWindow" Height="450" Width="800" PreviewKeyDown="Window_PreviewKeyDown" Background="White">
+    <Grid x:Name="MainGrid">
         <Ellipse x:Name="snakeHead" Width="20" Height="20" Fill="#FF1051FF" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="110,100,0,0"></Ellipse>
         <TextBlock x:Name="gameover" HorizontalAlignment="Center" Text="Game Over" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="24" FontWeight="Bold" Visibility="Hidden" RenderTransformOrigin="0.5,0.5">
             <TextBlock.RenderTransform>

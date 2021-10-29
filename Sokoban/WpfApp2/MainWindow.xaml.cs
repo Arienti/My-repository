@@ -15,6 +15,15 @@ using System.Windows.Shapes;
 
 namespace WpfApp2
 {
+    public class AppleCoord //scheme 
+    {
+        public Ellipse apple = new Ellipse();
+        public bool ImEating = false;
+        public int x;
+        public int y;
+    }
+
+
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
@@ -22,13 +31,40 @@ namespace WpfApp2
     {
         private int xPosition = 400;
         private int yPosition = 400;
+
+        static int appleSize = 10;
+
+        static List<AppleCoord> apples = new List<AppleCoord>();
         public MainWindow()
         {
             InitializeComponent();
-            snakeHead.Margin = new Thickness(xPosition, yPosition, 0, 0); //Left Top 
+            snakeHead.Margin = new Thickness(xPosition, yPosition, 0, 0); //Left Top             
+
+            Random r = new Random();
+            for (int i = 0; i < appleSize; i++)
+            {
+                //float a = 55.723;
+                //a / 10 = 5
+                //a / 10.0f = 5.5723
+                //80x40
+                //
+                // 10px 20px 1px // 10-450x+10 10-560y+10
+
+                AppleCoord a = new AppleCoord();
+                a.x = r.Next((int)(this.Width / 10.0f));
+                a.y = r.Next((int)(this.Height / 10.0f));
+                apples.Add(a);
+
+                a.apple.Width = 10;
+                a.apple.Height = 10;
+                a.apple.Fill = new SolidColorBrush(Colors.Red);
+                a.apple.HorizontalAlignment = HorizontalAlignment.Left;
+                a.apple.VerticalAlignment = VerticalAlignment.Top;
+                a.apple.Margin = new Thickness(a.x * 10, a.y * 10, 0, 0);
+                MainGrid.Children.Add(a.apple);
+
+            }
         }
-
-
         private void Window_PreviewKeyDown(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Up)

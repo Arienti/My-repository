@@ -8,5 +8,16 @@
         Title="MainWindow" Height="450" Width="800" PreviewKeyDown="Window_PreviewKeyDown">
     <Grid>
         <Ellipse x:Name="snakeHead" Width="20" Height="20" Fill="#FF1051FF" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="110,100,0,0"></Ellipse>
+        <TextBlock x:Name="gameover" HorizontalAlignment="Center" Text="Game Over" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="24" FontWeight="Bold" Visibility="Hidden" RenderTransformOrigin="0.5,0.5">
+            <TextBlock.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TextBlock.RenderTransform>
+        </TextBlock>
+        <Button x:Name="close" Content="Close" HorizontalAlignment="Center" Margin="0,238,0,0" VerticalAlignment="Top" Background="#FFABECFF" BorderBrush="Black" FontSize="24" FontWeight="Bold" Visibility="Hidden" Click="close_Click"/>
     </Grid>
 </Window>

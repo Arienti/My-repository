@@ -49,10 +49,20 @@ namespace WpfApp2
             {
                 xPosition += 10;
             }
-             
+             if (xPosition > 800 || xPosition < 0 || yPosition > 450 || yPosition < 0)
+            {
+                gameover.Visibility = Visibility.Visible;
+                close.Visibility = Visibility.Visible;
+                return;
+            }
             snakeHead.Margin = new Thickness(xPosition, yPosition, 0, 0);
             //home task is snake is kill self by the window wall
             //TextBlock with Text - Game Over must be show 
+        }
+
+        private void close_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
         }
     }
 }

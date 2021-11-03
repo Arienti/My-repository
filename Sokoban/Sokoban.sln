@@ -7,9 +7,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sokoban", "Sokoban\Sokoban.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Snake", "Snake\Snake.csproj", "{1794D3CF-FB56-442D-9987-5ECE3FBF565A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FirstWPF", "FirstWPF\FirstWPF.csproj", "{A70385E8-3EF5-4A10-9BA4-1279E4B13C6A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FirstWPF", "FirstWPF\FirstWPF.csproj", "{A70385E8-3EF5-4A10-9BA4-1279E4B13C6A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfApp2", "WpfApp2\WpfApp2.csproj", "{0292E3E7-6605-4E7E-8EAF-1D1590742AA3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WpfApp2", "WpfApp2\WpfApp2.csproj", "{0292E3E7-6605-4E7E-8EAF-1D1590742AA3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfSnake", "WpfSnake\WpfSnake.csproj", "{74EABF09-CB85-4438-890F-85C291B2866C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{0292E3E7-6605-4E7E-8EAF-1D1590742AA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0292E3E7-6605-4E7E-8EAF-1D1590742AA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0292E3E7-6605-4E7E-8EAF-1D1590742AA3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{74EABF09-CB85-4438-890F-85C291B2866C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74EABF09-CB85-4438-890F-85C291B2866C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74EABF09-CB85-4438-890F-85C291B2866C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74EABF09-CB85-4438-890F-85C291B2866C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

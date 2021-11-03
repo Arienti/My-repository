@@ -77,7 +77,8 @@ namespace Snake
                     storePrevSegment = storeCurrentSegment;
 
                 }
-                 
+               
+
                 //we check where snake go
                 if (key.Key == ConsoleKey.UpArrow)
                 {
@@ -104,7 +105,15 @@ namespace Snake
                 {
                     if ((apples[i].x == tail[0].x) && (apples[i].y == tail[0].y))
                     {
-                        apples[i].ImEating = true;
+                       apples[i].ImEating = true;
+                        eatedApplesCount++;
+                        {
+                           apples[i].x = r.Next(widht);
+                            apples[i].y = r.Next(height);
+                            Console.CursorLeft = apples[i].x;
+                            Console.CursorTop =apples[i].y;
+                           Console.Write("0");
+                       }
 
                         //0,1,2
                         //Count = 1, index of first element is 0
@@ -116,29 +125,29 @@ namespace Snake
                         tail.Add(tailSegment);
                     }
                 }
+               
 
+                /*if (tail[0].x < 0)
+                {
+                    tail[0].x = widht;
+                }
 
-                    /*if (tail[0].x < 0)
-                    {
-                        tail[0].x = widht;
-                    }
+                if (tail[0].x > widht)
+                {
+                    tail[0].x = 0;
+                }
 
-                    if (tail[0].x > widht)
-                    {
-                        tail[0].x = 0;
-                    }
+                if (tail[0].y < 0)
+                {
+                    tail[0].y = height;
+                }
 
-                    if (tail[0].y < 0)
-                    {
-                        tail[0].y = height;
-                    }
+                if (tail[0].y > height)
+                {
+                    tail[0].y = 0;
+                }*/
 
-                    if (tail[0].y > height)
-                    {
-                        tail[0].y = 0;
-                    }*/
-
-                    if (tail[0].x < 0 || tail[0].x > widht || tail[0].y < 0 || tail[0].y > height)
+                if (tail[0].x < 0 || tail[0].x > widht || tail[0].y < 0 || tail[0].y > height)
                 {
                     Console.CursorLeft = 20;
                     Console.CursorTop = 20;

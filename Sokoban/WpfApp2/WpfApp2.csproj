@@ -6,4 +6,14 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="1106031906.png" />
+    <None Remove="grass-texture-1536x1025.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="1106031906.png" />
+    <Resource Include="grass-texture-1536x1025.jpg" />
+  </ItemGroup>
+
 </Project>

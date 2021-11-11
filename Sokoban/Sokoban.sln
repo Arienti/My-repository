@@ -13,6 +13,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WpfApp2", "WpfApp2\WpfApp2.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfSnake", "WpfSnake\WpfSnake.csproj", "{74EABF09-CB85-4438-890F-85C291B2866C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HTTP_WPF", "HTTP_WPF\HTTP_WPF.csproj", "{278B07EE-E533-4229-8402-70B51A0B43DE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{74EABF09-CB85-4438-890F-85C291B2866C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{74EABF09-CB85-4438-890F-85C291B2866C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{74EABF09-CB85-4438-890F-85C291B2866C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{278B07EE-E533-4229-8402-70B51A0B43DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{278B07EE-E533-4229-8402-70B51A0B43DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{278B07EE-E533-4229-8402-70B51A0B43DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{278B07EE-E533-4229-8402-70B51A0B43DE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

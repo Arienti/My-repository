@@ -28,10 +28,10 @@
         <Button x:Name="GetHeatButton" Content="Get Heat Index Button" Grid.Column="1" Grid.Row="2" Click="GetHeatButton_Click"   />
         <TextBlock x:Name="HeatText" Text="--"  FontSize="48" Grid.Column="0" Grid.Row="2"/>
 
-        <Button x:Name="GetPressureButton" Content="Get Pressure Button" Grid.Column="1" Grid.Row="3" Click="GetPressureButton_Click"   />
+        <Button x:Name="GetPressureButton" Content="Get bmp280 Pressure Button" Grid.Column="1" Grid.Row="3" Click="GetPressureButton_Click"   />
         <TextBlock x:Name="PressureText" Text="--"  FontSize="48" Grid.Column="0" Grid.Row="3"/>
 
-        <Button x:Name="GetAltitudeButton" Content="Get Altitude Button" Grid.Column="1" Grid.Row="4" Click="GetAltitudeButton_Click"   />
+        <Button x:Name="GetAltitudeButton" Content="Get bmp280 Altitude Button" Grid.Column="1" Grid.Row="4" Click="GetAltitudeButton_Click"   />
         <TextBlock x:Name="AltitudeText" Text="--"  FontSize="48" Grid.Column="0" Grid.Row="4"/>
 
         <Button x:Name="Getbmp280TemperatureButton" Content="Get bmp280 Temperature Button" Grid.Column="1" Grid.Row="5" Click="Getbmp280TemperatureButton_Click"   />

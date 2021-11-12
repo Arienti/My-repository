@@ -1,18 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.Http;
-using System.Text;
+﻿using System.Net.Http;
 using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace HTTP_WPF
 {
@@ -29,12 +17,14 @@ namespace HTTP_WPF
             InitializeComponent();
         }
 
-        private async Task<string> Get(string APIName)
+        private async Task<string> Get(string id, string APIName)
         {
             // Call asynchronous network methods in a try/catch block to handle exceptions.
             try
             {
-                HttpResponseMessage response = await client.GetAsync("http://46.219.35.245/getdriverproperty?id=dht22&property=" + APIName);
+                //http://46.219.35.245/getdriverproperty?id=dht22&property=temperature
+                //http://46.219.35.245/getdriverproperty?id=bmp280&property=pressure
+                HttpResponseMessage response = await client.GetAsync("http://46.219.35.245/getdriverproperty?id=" + id + "&property=" + APIName);
                 response.EnsureSuccessStatusCode();
                 string responseBody = await response.Content.ReadAsStringAsync();
                 // Above three lines can be replaced with new helper method below
@@ -47,22 +37,34 @@ namespace HTTP_WPF
             catch
             {
                 return "Error";
-            }            
+            }
         }
 
         private async void GetTemperatureButton_Click(object sender, RoutedEventArgs e)
         {
-            TemperatureText.Text = await Get("temperature");
+            TemperatureText.Text = await Get("dht22", "temperature");
         }
 
         private async void GetHumButton_Click(object sender, RoutedEventArgs e)
         {
-            HumText.Text = await Get("humidity");
+            HumText.Text = await Get("dht22", "humidity");
         }
 
         private async void GetHeatButton_Click(object sender, RoutedEventArgs e)
         {
-            HeatText.Text = await Get("heatindex");
+            HeatText.Text = await Get("dht22", "heatindex");
+        }
+        private async void GetPressureButton_Click(object sender, RoutedEventArgs e)
+        {
+            PressureText.Text = await Get("bmp280", "pressure");
+        }
+        private async void GetAltitudeButton_Click(object sender, RoutedEventArgs e)
+        {
+            AltitudeText.Text = await Get("bmp280", "altitude");
+        }
+        private async void Getbmp280TemperatureButton_Click(object sender, RoutedEventArgs e)
+        {
+            bmp280TemperatureText.Text = await Get("bmp280", "temperature");
         }
 
         //

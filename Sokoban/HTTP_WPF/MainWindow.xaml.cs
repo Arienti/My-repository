@@ -23,7 +23,12 @@ namespace HTTP_WPF
             try
             {
                 //http://46.219.35.245/getdriverproperty?id=dht22&property=temperature
-                //http://46.219.35.245/getdriverproperty?id=bmp280&property=pressure
+
+                //how to call this RESTful API from server -> http://46.219.35.245/getdriverproperty?id=bmp280&property=pressure
+                //server side -> public string getdriverproperty(string id, string property);
+                //client side -> string result = getdriverproperty("bmp280", "pressure");
+
+
                 HttpResponseMessage response = await client.GetAsync("http://46.219.35.245/getdriverproperty?id=" + id + "&property=" + APIName);
                 response.EnsureSuccessStatusCode();
                 string responseBody = await response.Content.ReadAsStringAsync();

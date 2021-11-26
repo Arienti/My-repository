@@ -6,6 +6,7 @@ namespace Snake
 {
     public class AppleCoord //scheme 
     {
+
         public bool ImEating = false;
         public int x; 
         public int y;
@@ -14,7 +15,8 @@ namespace Snake
     public class TailSegmentCoord //scheme 
     {        
         public int x;
-        public int y;
+        public int y;        
+
     }
 
     class Program
@@ -35,7 +37,8 @@ namespace Snake
 
             for (int i = 0; i < appleSize; i++)
             {
-                AppleCoord a = new AppleCoord();
+                
+                AppleCoord a = new AppleCoord();                                
                 a.x = r.Next(widht);
                 a.y = r.Next(height);
                 apples.Add(a);
@@ -44,6 +47,8 @@ namespace Snake
                 Console.CursorTop = a.y;
                 Console.Write("0");
             }
+
+
 
             TailSegmentCoord head = new TailSegmentCoord();
             head.x = 10;

@@ -49,7 +49,6 @@ namespace Snake
             }
 
 
-
             TailSegmentCoord head = new TailSegmentCoord();
             head.x = 10;
             head.y = 10;
